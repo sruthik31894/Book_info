@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 //import 'rxjs/add/operator/toPromise';
-import * as JWT from 'jwt-decode';
+//import * as JWT from 'jwt-decode';
 
 import { UtilService } from './util.service';
 import { ApiResponse } from './api-response';
