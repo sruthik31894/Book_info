@@ -1,0 +1,30 @@
+<form (ngSubmit)="createNewBook(newBook)">
+  <label for="name" class="col-sm-6 col-form-label">Enter Book Name:*</label>
+  <input [(ngModel)]="newBook.name" id="name" name="name" required="required" placeholder="Enter Name" autofocus
+    class="form-control"><br />
+  <label for="type" class="col-sm-6 col-form-label">Enter Book Type:<span>* <small>separate with comma if multiple
+        inputs</small></span></label>
+  <input [(ngModel)]="newBook.type" id="type" name="type" required="required" placeholder="Enter Type" autofocus
+    class="form-control"><br />
+  <label for="author" class="col-sm-6 col-form-label">Enter Author:<span>*</span></label>
+  <input [(ngModel)]="newBook.author" id="author" name="author" required="required" placeholder="Enter Author" autofocus
+    class="form-control"><br />
+
+  <label for="release" class="col-sm-3 col-form-label">Enter Release Date: <span>*</span></label>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="newBook.release_date" id="release"
+    name="release"><mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle><br />
+
+  <mat-datepicker #picker></mat-datepicker>
+
+  <label for="desc" class="col-sm-6 col-form-label">Enter Description:<span>*</span> </label>
+  <textarea rows="4" cols="50" id="desc" name="desc" required="required" placeholder="Desc" [(ngModel)]="newBook.desc" autofocus class="form-control"></textarea><br />
+
+  <label for="image" class="col-sm-2 col-form-label">Upload Image:<span>*</span> </label>
+
+  <input [(ngModel)]="newBook.image" type="file" id="image" name="single" ng2FileSelect [uploader]="uploader"/>
+  <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+    <span>Upload...</span>
+  </button><br /><br /><br />
+
+  <button type="submit" class="btn btn-primary float-right" style="margin-left:15px"> Create Book</button>
+</form>
