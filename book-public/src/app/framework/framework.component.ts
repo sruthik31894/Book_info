@@ -37,18 +37,7 @@ import { FilterPipe } from '../filter.pipe';
   styleUrls: ['./framework.component.css']
 })
 export class FrameworkComponent implements OnInit {
-
-  name = 'Angular';
-  characters = [
-    {name: 'Finn the human'},
-    {name: 'Jake the dog'},
-    {name: 'Princess bubblegum'},
-    {name: 'Lumpy Space Princess'},
-    {name: 'Beemo1'},
-    {name: 'Beemo2'}
-  ]
-  searchText: string;
-
+  
   constructor(public authService: AuthService) { }
 
   ngOnInit() {
