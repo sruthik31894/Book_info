@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "heroku-postbuild": "cd book-public && npm install && ng build --prod"
+    "heroku-postbuild": "cd book-public && npm install && ng build --prod && npm audit fix"
   },
   "engines": {
     "node": "v10.15.3",
