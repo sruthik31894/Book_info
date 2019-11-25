@@ -35,6 +35,11 @@ const corsOpt = {
 app.use(cors(corsOpt));
 app.options('*', cors(corsOpt));
 
+app.use(function(req, res, next) {
+  res.setHeader("Content-Security-Policy", "font-src 'self' data");
+  return next();
+});
+
 app.use('/api', apiRouter);
 
 app.use('/api/users', require('./app_api/routes/users'));
