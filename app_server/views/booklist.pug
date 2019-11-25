@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= title
+    p Here is a list of the books added.
+    ul
+        each book in books
+            li
+                a(href=`/books/${book._id}`)= book.name
+    p
+        a(href=`/new`) Create New One

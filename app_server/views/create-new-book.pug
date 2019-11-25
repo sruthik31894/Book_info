@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    h1 Create New Book
+    form(method='POST' action='')
+        div
+            label Name:
+            input(type='text', name='name')
+        div
+            label Type:
+            input(type='text', name='type')
+        div
+            label Release Date:
+            input(type='text', name='release_date')
+        div
+            label Author:
+            input(type='text', name='author')
+        div
+            label Image:
+            input(type='text', name='image')
+        div
+            label Description:
+            input(type='text', name='desc')
+        div
+            label Rating:
+            input(type='text', name='rating')
+        div
+            label Reviews:
+            input(type='text', name='reviews')
+        button(type='submit') Submit

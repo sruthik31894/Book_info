@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1= title
+    //a(href=`/update/` + currentBook._id) Update
+    //a(href=`/delete/` + currentBook._id) Delete
+    p Book Name: #{currentBook.name}
+    p Type: #{currentBook.type}
+    p Release Date: #{currentBook.release_date}
+    p Author: #{currentBook.author}
+    //p Image: #{currentBook.image}
+    p Description: #{currentBook.desc}
+    p Rating: #{currentBook.rating}
+    p Reviews: #{currentBook.reviews}
+    img(
+        src='http://localhost:3000/images/' + currentBook.image
+        width='200'
+        height='200'
+    )
