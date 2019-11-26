@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "serve -s dist",
+    "start": "node ./bin/www",
     "heroku-postbuild": "cd book-public && npm install && ng build --prod && npm audit fix"
   },
   "engines": {
