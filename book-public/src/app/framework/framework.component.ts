@@ -37,7 +37,7 @@ import { FilterPipe } from '../filter.pipe';
   styleUrls: ['./framework.component.css']
 })
 export class FrameworkComponent implements OnInit {
-  
+
   constructor(public authService: AuthService) { }
 
   ngOnInit() {
