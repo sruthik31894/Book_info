@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
 app.use(csp({
   directives: {
     defaultSrc: [`'self'`],
-    fontSrc: [`'self'`, `https://fonts.gstatic.com`],
+    fontSrc: [`'self'`],
     connectSrc: [`https://fonts.googleapis.com`]
   }
 }));
