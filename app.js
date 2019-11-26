@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_api')));
+app.use(express.static(path.join(__dirname, 'book-public', 'build')));
 
 const corsOpt = {
   credentials: true,
@@ -35,12 +36,7 @@ const corsOpt = {
 };
 app.use(cors(corsOpt));
 app.options('*', cors(corsOpt));
-/*
-app.use(function(req, res, next) {
-  res.setHeader("Content-Security-Policy", "font-src 'self' data");
-  return next();
-});
-*/
+
 app.use(csp({
   directives: {
     scriptSrc: [`'self', 'unsafe-inline', 'unsafe-eval'`],
