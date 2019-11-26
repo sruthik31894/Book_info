@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "heroku-postbuild": "cd book-public && npm install && ng build --prod && npm audit fix"
+    "build": "cd book-public && ng build",
+    "heroku-postbuild": "ng build --prod"
   },
   "engines": {
     "node": "v10.15.3",
@@ -24,6 +25,7 @@
     "@material/snackbar": "^4.0.0",
     "@material/theme": "^4.0.0",
     "@types/jwt-decode": "^2.2.1",
+    "angular-font-awesome": "^3.1.2",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.19.0",
     "bscript": "^0.1.0",
@@ -34,6 +36,7 @@
     "dotenv": "^8.2.0",
     "enhanced-resolve": "^3.3.0",
     "express": "^4.16.4",
+    "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "helmet-csp": "^2.9.4",
     "http": "0.0.0",
@@ -63,7 +66,8 @@
     "@angular/platform-browser-dynamic": "^8.2.14",
     "@angular/router": "^8.2.14",
     "nodemon": "^1.19.4",
-    "ts-node": "^8.4.1"
+    "ts-node": "^8.4.1",
+    "webfont": "^9.0.0"
   },
   "author": "",
   "license": "ISC",
