@@ -32,7 +32,6 @@ export class HomeListComponent implements OnInit {
     this.bookService
       .getBooks()
       .then((books: Book[]) => {
-debugger
         this.books=books.map(book=>{return book;})
       })
   }

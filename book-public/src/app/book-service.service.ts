@@ -36,7 +36,7 @@ export class BookServiceService {
 
 
   createBook(newBook: Book): Promise<void | Book>{
-debugger
+
     return this.http.post(this.booksUrl, newBook)
       .toPromise().then(response=>response as Book)
       .catch(this.handleError);
@@ -44,7 +44,7 @@ debugger
   }
 
   updateBook(bookId: string, theBook: { image: string; type: string; desc: string }): Promise<void | Book> {
-    debugger
+
     return this.http.put(this.booksUrl + '/' + bookId, theBook)
       .toPromise()
       .then(response => response as Book)
