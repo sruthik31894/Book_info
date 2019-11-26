@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');
-var csp = require(`helmet-csp`);
+var csp = require('helmet-csp');
 
 require('./app_api/models/db');
 const apiRouter = require('./app_api/routes/books');
@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
 app.use(csp({
   directives: {
     defaultSrc: [`'self'`],
-    fontSrc: [`'self'`, `fonts.gstatic.com`, `fonts.googleapis.com`]
+    fontSrc: [`'self'`, `https://themes.googleusercontent.com`]
   }
 }));
 
