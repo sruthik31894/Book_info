@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');
+var csp = require(`helmet-csp`);
 
 require('./app_api/models/db');
 const apiRouter = require('./app_api/routes/books');
@@ -34,14 +35,20 @@ const corsOpt = {
 };
 app.use(cors(corsOpt));
 app.options('*', cors(corsOpt));
-
+/*
 app.use(function(req, res, next) {
   res.setHeader("Content-Security-Policy", "font-src 'self' data");
   return next();
 });
+*/
+app.use(csp({
+  directives: {
+    defaultSrc: [`'self'`],
+    fontSrc: [`'self'`, `fonts.gstatic.com`, `fonts.googleapis.com`]
+  }
+}));
 
 app.use('/api', apiRouter);
-
 app.use('/api/users', require('./app_api/routes/users'));
 app.use('/api/auth', require('./app_api/routes/auth'));
 
