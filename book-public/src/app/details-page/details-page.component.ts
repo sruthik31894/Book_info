@@ -22,7 +22,7 @@ import { StarRatingColor } from "../star-rating/star-rating.component";
       
       <div class="col-12 col-md-6">
         
-      <div class="item pic"><img src="http://localhost:3000/routes/upload/{{ newBook?.image }}" width="150" height="150" style="float:left; margin-right:50px"></div>
+      <div class="item pic"><img src="https://book-info-sharing.herokuapp.com/routes/upload/{{ newBook?.image }}" width="150" height="150" style="float:left; margin-right:50px"></div>
 
         <p><strong>Rating:</strong> <app-rating-stars [rating]="newBook?.rating"></app-rating-stars></p>
         
