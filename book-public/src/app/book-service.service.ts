@@ -12,7 +12,7 @@ export class BookServiceService {
   constructor(private http:HttpClient){}
 
   getBooks(): Promise<void | Book[]>{
-
+debugger
     return this.http.get(this.booksUrl)
       .toPromise()
       .then(response=>response as Book[])
