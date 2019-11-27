@@ -43,12 +43,13 @@ app.options('*', cors(corsOpt));
 
 app.use(csp({
   directives: {
-    scriptSrc: [`'self', 'unsafe-inline', 'unsafe-eval'`],
+  /*  scriptSrc: [`'self', 'unsafe-inline', 'unsafe-eval'`],
     fontSrc: [`'self' data:, fonts.gstatic.com, fonts.googleapis.com, cdnjs.cloudflare.com`],
     connectSrc: [`'self'`],
     imgSrc: [`'self'`],
     styleSrc: [`'self', 'unsafe-inline'`],
-    frameSrc: [`'none'`]
+    frameSrc: [`'none'`] */
+    fontSrc: [`'self' data:`]
   }
 }));
 
