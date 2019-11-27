@@ -7,7 +7,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 )
 export class BookServiceService {
 
-  private booksUrl = 'http://localhost:3000/api/books';
+  private booksUrl = 'https://book-info-sharing.herokuapp.com/api/books';
 
   constructor(private http:HttpClient){}
 
