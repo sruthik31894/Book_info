@@ -27,11 +27,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_api')));
 app.use(express.static(path.join(__dirname, 'book-public', '/dist/book-public')));
-
+/*
 app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname+'/book-public/dist/book-public/index.html'));
 });
-
+*/
 const corsOpt = {
   credentials: true,
   origin: process.env.CORS_ALLOW_ORIGIN || 'http://localhost:4200', // this work well to configure origin url in the server
