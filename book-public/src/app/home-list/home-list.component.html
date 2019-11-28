@@ -41,7 +41,7 @@
       <div class="card-block">
         <div class="item pic"><img src="https://book-info-sharing.herokuapp.com/routes/upload/{{ book.image }}" width="100"
                                    height="120" style="float:left; margin-right:50px"></div>
-        <h4><a href="/book/{{ book._id }}">{{ book.name }}</a>
+        <h4><a [routerLink]="['/book', book._id]">{{ book.name }}</a>
           <small>&nbsp;&nbsp;
             <app-rating-stars [rating]="book.rating"></app-rating-stars>
           </small>
