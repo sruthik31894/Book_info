@@ -50,7 +50,7 @@ import { StarRatingColor } from "../star-rating/star-rating.component";
             <div  class="col-12 no-gutters review-header card-title">
               <span class="rating i.fas.fa-star"></span>
               <span class="rating i.far.fa-star"></span>
-              <span *ngIf="authService.isLoggedin() && authService.getCurrentUser().username === review.author" class="review" style=" text-transform: capitalize;"><a [routerLink]="['/book', newBook?._id, 'reviews', review._id]">{{review.author}}</a><small class="review">{{review.createdOn | date }}</small></span>
+              <span *ngIf="authService.isLoggedin() && authService.getCurrentUser().username === review.author" class="review" style=" text-transform: capitalize;"><a [routerLink]="['/book', newBook?._id, 'reviews', review?._id]">{{review.author}}</a><small class="review">{{review.createdOn | date }}</small></span>
               <span *ngIf="!authService.isLoggedin() || authService.getCurrentUser().username !== review.author" class="review" style=" text-transform: capitalize;">{{review.author}}<small class="review">{{review.createdOn | date }}</small></span>
               <span><app-rating-stars [rating]="review.rating"></app-rating-stars></span>
               <span style="float:right"></span>

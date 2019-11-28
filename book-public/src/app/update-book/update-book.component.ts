@@ -126,7 +126,7 @@ debugger
   };
 
   public uploader: FileUploader = new FileUploader({
-    url: 'http://localhost:3000/api/upload',
+    url: 'https://book-info-sharing.herokuapp.com/api/upload',
     itemAlias: 'image'
   });
 
