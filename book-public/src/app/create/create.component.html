@@ -2,10 +2,10 @@
   <label for="name" class="col-sm-6 col-form-label">Enter Book Name:*</label>
   <input [(ngModel)]="newBook.name" id="name" name="name" required="required" placeholder="Enter Name" autofocus
     class="form-control"><br />
-  <label for="type" class="col-sm-6 col-form-label">Enter Book Type:<span>* <small>separate with comma if multiple
-        inputs</small></span></label>
-  <input [(ngModel)]="newBook.type" id="type" name="type" required="required" placeholder="Enter Type" autofocus
-    class="form-control"><br />
+  <label for="type" class="col-sm-6 col-form-label">Enter Book Type:<span>*</span></label>
+  <select [(ngModel)]="newBook.type" id="type" name="type" class="form-control">
+    <option *ngFor="let type of types" [ngValue]=type>{{type}}</option>
+  </select>
   <label for="author" class="col-sm-6 col-form-label">Enter Author:<span>*</span></label>
   <input [(ngModel)]="newBook.author" id="author" name="author" required="required" placeholder="Enter Author" autofocus
     class="form-control"><br />

@@ -13,17 +13,8 @@
   <div class="row no-gutters">
     <div class="col-xs-12 col-sm-3">
       <select [(ngModel)]=genre id="type" name="type" class="form-control input-sm">
-        <option [ngValue]=""></option>
-        <option disabled hidden [ngValue]="selectUndefinedOptionValue">-- select --</option>
-        <option [ngValue]=type[0]>Genre Fiction</option>
-        <option [ngValue]=type[1]>Biographies & Memoirs</option>
-        <option [ngValue]=type[2]>Arts & Photography</option>
-        <option [ngValue]=type[3]>Business & Investing</option>
-        <option [ngValue]=type[4]>Personal Finance</option>
-        <option [ngValue]=type[5]>Comics & Graphic Novels</option>
-        <option [ngValue]=type[6]>Ages 6-8</option>
-        <option [ngValue]=type[7]>Thriller</option>
-        <option [ngValue]=type[8]>Suspense</option>
+        <option [ngValue]="selectUndefinedOptionValue">--- All ---</option>
+        <option *ngFor="let type of types" [ngValue]=type>{{type}}</option>
       </select>
     </div>
     <div class="col-xs-12 col-sm-4">

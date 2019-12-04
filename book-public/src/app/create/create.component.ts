@@ -25,6 +25,18 @@ export class CreateComponent implements OnInit {
     rating: 0,
     reviews: []
   };
+  
+  types = [
+    'Genre Fiction',
+    'Biographies & Memoirs',
+    'Arts & Photography',
+    'Business & Investing',
+    'Personal Finance',
+    'Comics & Graphic Novels',
+    'Ages 6-8',
+    'Thriller',
+    'Suspense'
+  ];
 
   pageContent = {
     header : {

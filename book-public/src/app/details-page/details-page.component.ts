@@ -13,7 +13,7 @@ import { StarRatingColor } from "../star-rating/star-rating.component";
 
     <app-header [content]="pageContent.header"></app-header>
     <hr>
-    <div class="row banner"><div class="col-12"><h1>{{newBook?.name}}</h1><span *ngIf="authService.getCurrentUser()?.isAdmin" style="float:right !improtant"><a [routerLink]="['/updatebook', newBook?._id]">Update Book</a> | <button (click)="deleteSingleBook(newBook?._id)">DELETE</button></span></div></div>
+    <div class="row banner"><div class="col-12"><h1>{{newBook?.name}}</h1><span *ngIf="authService.getCurrentUser()?.isAdmin" style="float:right !improtant"><a *ngIf="newBook" [routerLink]="['/updatebook', newBook?._id]">Update Book</a> | <button (click)="deleteSingleBook(newBook?._id)">DELETE</button></span></div></div>
     
     <div class="row">
       <div class="col-12 col-lg-9"></div>
@@ -50,7 +50,7 @@ import { StarRatingColor } from "../star-rating/star-rating.component";
             <div  class="col-12 no-gutters review-header card-title">
               <span class="rating i.fas.fa-star"></span>
               <span class="rating i.far.fa-star"></span>
-              <span *ngIf="authService.isLoggedin() && authService.getCurrentUser().username === review.author" class="review" style=" text-transform: capitalize;"><a [routerLink]="['/book', newBook?._id, 'reviews', review?._id]">{{review.author}}</a><small class="review">{{review.createdOn | date }}</small></span>
+              <span *ngIf="authService.isLoggedin() && authService.getCurrentUser().username === review.author" class="review" style=" text-transform: capitalize;"><a *ngIf="newBook" [routerLink]="['/book', newBook?._id, 'reviews', review?._id]">{{review.author}}</a><small class="review">{{review.createdOn | date }}</small></span>
               <span *ngIf="!authService.isLoggedin() || authService.getCurrentUser().username !== review.author" class="review" style=" text-transform: capitalize;">{{review.author}}<small class="review">{{review.createdOn | date }}</small></span>
               <span><app-rating-stars [rating]="review.rating"></app-rating-stars></span>
               <span style="float:right"></span>

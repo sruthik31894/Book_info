@@ -11,7 +11,7 @@ export class HomeListComponent implements OnInit {
 
   @Input() books: Book[];
 
-  type = [
+  types = [
     'Genre Fiction',
     'Biographies & Memoirs',
     'Arts & Photography',
