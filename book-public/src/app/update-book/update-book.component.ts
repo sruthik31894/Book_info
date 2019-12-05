@@ -14,13 +14,15 @@ import { FileUploader } from '../file-upload/file-uploader.class';
       <label for="name">Book Name: &nbsp;&nbsp;</label>
       <span id="name">{{theBook.name}}</span><br/><br/>
       <label for="type">Enter Book Type: &nbsp;&nbsp;</label>
-      <input [(ngModel)]="renewBook.type" id="type" name="type" required="required" placeholder="{{theBook.type}}" autofocus><br/><br/>
+      <select [(ngModel)]="theBook.type" id="type" name="type" class="form-control">
+        <option *ngFor="let type of types" [ngValue]=type>{{type}}</option>
+      </select><br/>
       <label for="author">Author: &nbsp;&nbsp;</label>
       <span id="author">{{theBook.author}}</span><br/><br/>
       <label for="release">Release Date: &nbsp;&nbsp;</label>
       <span id="release">{{theBook.release_date}}</span><br/><br/>
       <label for="desc">Enter Description: &nbsp;&nbsp;</label><br/>
-      <textarea rows="4" cols="50" id="desc" name="desc" required="required"
+      <textarea class="form-control" rows="4" cols="50" id="desc" name="desc" required="required"
                 [(ngModel)]="renewBook.desc" placeholder="{{theBook.desc}}" autofocus></textarea><br/><br/>
 
       <label for="image" class="col-sm-2 col-form-label">Upload Image:<span>*</span> </label>
@@ -42,6 +44,18 @@ export class UpdateBookComponent implements OnInit {
   ) { }
 
   theBook: Book;
+  
+  types = [
+    'Genre Fiction',
+    'Biographies & Memoirs',
+    'Arts & Photography',
+    'Business & Investing',
+    'Personal Finance',
+    'Comics & Graphic Novels',
+    'Ages 6-8',
+    'Thriller',
+    'Suspense'
+  ];
 
   ngOnInit(): void {
 
