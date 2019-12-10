@@ -13,7 +13,8 @@
   <div class="row no-gutters">
     <div class="col-xs-12 col-sm-3">
       <select [(ngModel)]=genre id="type" name="type" class="form-control input-sm">
-        <option [ngValue]="selectUndefinedOptionValue">--- All ---</option>
+        <option disabled hidden [ngValue]="selectUndefinedOptionValue">-- select --</option>
+        <option [ngValue]="selectUndefinedOptionValue">All</option>
         <option *ngFor="let type of types" [ngValue]=type>{{type}}</option>
       </select>
     </div>

@@ -108,8 +108,13 @@ form{
   width: 90%;
 }
 
-nav-link.a{
+.nav-link {
   color: #fff !important;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: #000 !important;
 }
 
 html, body { height: 100%; }
