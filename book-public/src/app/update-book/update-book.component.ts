@@ -116,7 +116,7 @@ debugger
     this.route.params.pipe(
       switchMap((params: Params) => {
         id = params['bookid'];
-        debugger
+
         return this.bookDataService.updateBook(params['bookid'], renewBook)
       }))
       .subscribe((renewBook: Book) => {

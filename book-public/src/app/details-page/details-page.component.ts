@@ -88,7 +88,7 @@ import { StarRatingColor } from "../star-rating/star-rating.component";
               </div>
               <div class="form-group row">
                 <div class="col-12">
-                  <button type="submit" [routerLink]="['/book', newBook._id]" class="btn btn-primary float-right" style="margin-left:15px">Submit review</button>
+                  <button type="submit" class="btn btn-primary float-right" style="margin-left:15px">Submit review</button>
                   <button (click)="formVisible=false" type="button" class="btn btn-default float-right">Cancel</button>
                 </div>
               </div>
@@ -164,8 +164,11 @@ export class DetailsPageComponent implements OnInit {
           reviews.unshift(reviews);
           this.newBook.reviews = reviews;
           this.resetAndHideReviewForm();
-
-          window.location.reload();
+          //window.location.reload();
+          const createRouter = this.router;
+          setTimeout(function () {
+            createRouter.navigateByUrl(`book/${this.newBook._id}`);
+          }, 1000);
         });
     } else {
       this.formError = 'All fields required, please try again';
