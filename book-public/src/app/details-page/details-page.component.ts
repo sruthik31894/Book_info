@@ -168,7 +168,7 @@ export class DetailsPageComponent implements OnInit {
           const createRouter = this.router;
           setTimeout(function () {
             createRouter.navigate(['book/${this.newBook._id}']);
-          }, 2000);
+          }, 1000);
         });
     } else {
       this.formError = 'All fields required, please try again';
