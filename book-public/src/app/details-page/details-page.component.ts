@@ -167,10 +167,10 @@ export class DetailsPageComponent implements OnInit {
           //window.location.reload();
           const createRouter = this.router;
           setTimeout(function () {
-            createRouter.navigateByUrl(`book/${this.newBook._id}`);
+            createRouter.navigate(['']);
           }, 1000);
           setTimeout(function () {
-            createRouter.navigateByUrl(`book/${this.newBook._id}`);
+            createRouter.navigate(['book/${this.newBook._id}']);
           }, 500);
         });
     } else {
