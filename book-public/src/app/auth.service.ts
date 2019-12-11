@@ -33,7 +33,6 @@ export class AuthService {
   }
 
   me(): Promise<User> {
-    debugger
     return this.http.get<ApiResponse>(`${this.apiBaseUrl}/me`)
       .toPromise()
       .then(this.utilService.checkSuccess)

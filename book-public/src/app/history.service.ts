@@ -27,6 +27,6 @@ export class HistoryService {
     const filtered = this.urls.filter(url => !exclude.includes(url));
     const length = filtered.length;
     debugger
-    return length > 1 ? filtered[length -1] : '/';
+    return length > 0 ? filtered[length -1] : '/';
   }
 }

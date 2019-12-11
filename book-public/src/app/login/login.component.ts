@@ -92,7 +92,8 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.form.value.username, this.form.value.password)
         .then(() =>{
           //this.router.navigate([this.redirectTo?this.redirectTo:'/']);
-          this.router.navigate([history.back()]);
+          //this.router.navigate([history.back()]);
+          this.router.navigate([this.historyService.getLastNonLoginUrl()]);
         })
         .catch(response =>{
           this.errorResponse = response;

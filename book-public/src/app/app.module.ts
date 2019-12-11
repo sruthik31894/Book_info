@@ -34,6 +34,7 @@ import {MatTooltipModule} from "@angular/material";
 import {MatIconModule} from "@angular/material";
 import {MatFormFieldModule} from "@angular/material";
 import { FilterPipe} from './filter.pipe';
+import {HistoryService} from "./history.service";
 //import { FileSelectDirective } from "./file-upload/file-upload.module";
 
 @NgModule({
@@ -101,6 +102,7 @@ import { FilterPipe} from './filter.pipe';
     UtilService,
     AuthService,
     UserService,
+    HistoryService
   ],
   //bootstrap: [AppComponent],
   bootstrap: [FrameworkComponent]

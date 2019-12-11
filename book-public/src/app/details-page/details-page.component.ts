@@ -6,6 +6,7 @@ import { switchMap } from "rxjs/operators";
 import { Router } from '@angular/router';
 import { AuthService } from "../auth.service";
 import { StarRatingColor } from "../star-rating/star-rating.component";
+import { HistoryService } from '../history.service';
 
 @Component({
   selector: 'app-details-page',
@@ -112,7 +113,13 @@ export class DetailsPageComponent implements OnInit {
   starColorP:StarRatingColor = StarRatingColor.primary;
   starColorW:StarRatingColor = StarRatingColor.warn;
 
-  constructor(private bookServiceService: BookServiceService, private route: ActivatedRoute, private router: Router, public authService: AuthService) { }
+  constructor(
+    private bookServiceService: BookServiceService,
+    private route: ActivatedRoute,
+    private router: Router,
+    public authService: AuthService,
+    private historyService: HistoryService
+  ) { }
 
   newBook: Book;
   ngOnInit(): void {
@@ -157,6 +164,7 @@ export class DetailsPageComponent implements OnInit {
     this.newReview.rating = this.rating;
     this.newReview.author = this.authService.getCurrentUser().username;
     this.formError = '';
+    let id = this.newBook._id;
     if (this.formIsValid()) {
       this.bookServiceService.addReviewByReviewId(this.newBook._id, this.newReview)
         .then(review => {
@@ -165,10 +173,9 @@ export class DetailsPageComponent implements OnInit {
           this.newBook.reviews = reviews;
           this.resetAndHideReviewForm();
           //window.location.reload();
-          const createRouter = this.router;
-          setTimeout(function () {
-            createRouter.navigateByUrl(``);
-          }, 1000);
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['book/'+id]);
+          });
         });
     } else {
       this.formError = 'All fields required, please try again';

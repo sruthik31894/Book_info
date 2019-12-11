@@ -7,7 +7,7 @@ import { ApiResponse } from '../api-response';
 import { UtilService } from '../util.service';
 import { UserService } from '../user.service';
 import { AuthService } from '../auth.service';
-//import { HistoryService } from '../history.service';
+import { HistoryService } from '../history.service';
 
 @Component({
   selector: 'app-user-new',
@@ -138,7 +138,7 @@ export class UserNewComponent implements OnInit {
     private utilService: UtilService,
     private userService: UserService,
     private authService: AuthService,
-    //private historyService: HistoryService
+    private historyService: HistoryService
   ) {
     this.buildForm();
   }
@@ -155,7 +155,8 @@ export class UserNewComponent implements OnInit {
           //this.router.navigate(['/login']);
           //this.router.navigateByUrl(this.historyService.getLastNonLoginUrl());
           this.authService.login(this.form.value.username, this.form.value.password);
-          this.router.navigate([history.back()]);
+          //this.router.navigate([history.back()]);
+          this.router.navigateByUrl(this.historyService.getLastNonLoginUrl());
         })
         .catch(response =>{
           this.errorResponse = response;
