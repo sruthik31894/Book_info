@@ -66,7 +66,7 @@
     "@angular/router": "^8.2.14",
     "nodemon": "^1.19.4",
     "ts-node": "^8.4.1",
-    "webfont": "^9.0.0"
+    "webfont": "^11.2.26"
   },
   "author": "",
   "license": "ISC",
